@@ -8,7 +8,18 @@ $(document).ready(function() {
             $(this).html(dateMinus($(this).attr('data-date-minus')))
         }
     })
+    let aux = 1200;
+    setInterval(function () {
+        $('#count').html(aux.toLocaleString('de-DE'));
+
+        if(aux % 2 === 0) aux++;
+        else aux = aux+15;
+    }, 2000);
 })
+
+function transition() {
+    
+}
 
 function dateMinus(what) {
     var today = Date.now()
